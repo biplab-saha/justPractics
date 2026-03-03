@@ -34,12 +34,34 @@ public class simpleCalculator {
 
 
                 switch (op){
+                    case "+": result = a + b; break;
+                    case "-": result = a - b; break;
+                    case "*": result = a * b; break;
+                    case "/":
+                        if (b == 0){System.out.println("Error : Division by zero\n"); continue;}
+                        result = a / b; break;
+                    case "%":
+                        if ( b == 0 ) { System.out.println("Error: Modulo by zero\n");continue;}
                     
+                    default:
+                        System.out.println("Error: Unknown operator '" + op + "'\n ");continue;    
                 }
 
+                // Print without trailing .0 for whole numbers
+                if (result == Math.floor(result) && !Double.isInfinite(result)){
+                    System.out.printf("= %.0f%n%n", result);
+                } else {
+
+                    System.out.printf("= %s%n%n", result);
+                }
+
+            }catch (NumberFormatException e){
+                System.out.println("Error: Invalid number format\n");
             }
 
         }
+
+        scanner.close();
 
     }
     
