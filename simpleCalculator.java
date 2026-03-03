@@ -19,6 +19,26 @@ public class simpleCalculator {
                 break;
 
             }
+            try{
+                String[] parts = line.split("\\s+");
+                if (parts.length !=3){
+                    System.out.println("Error: Please enter in format: <number> <operator> <number>\n");
+                    continue;
+                }
+
+                double a = Double.parseDouble(parts[0]);
+                String op = parts[1];
+                double b = Double.parseDouble(parts[2]);
+                double result;
+
+
+
+                switch (op){
+                    
+                }
+
+            }
+
         }
 
     }
